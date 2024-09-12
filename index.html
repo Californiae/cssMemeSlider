@@ -2,38 +2,54 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memes slider</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memes slider</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="all">
-        <input checked type="radio" name="respond" id="desktop">
-        <article id="slider">
-            <input type="radio" name="slider" id="switch1">
-            <input type="radio" name="slider" id="switch2">
-            <input type="radio" name="slider" id="switch3">
-            <input type="radio" name="slider" id="switch4">
-            <div id="slides">
-                <div id="overflow">
-                    <div class="image">
-                        <article><img src="1.jpg"></article>
-                        <article><img src="2.jpg"></article>
-                        <article><img src="3.jpg"></article>
-                        <article><img src="4.jpg"></article>
-                    </div>
-                </div>
-            </div>
-            <div id='controls'>
-                <label for="switch1"></label>
-                <label for="switch2"></label>
-                <label for="switch3"></label>
-                <label for="switch4"></label>
-            </div>
-        </article>
+  <div class="slider">
+    <!-- Radio buttons to control slides -->
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="radio" name="slider" id="slide4">
+    <div class="slides">
+      <div class="slide" id="slide-1">
+        <img src="1.jpg" alt="Image 1">
+        <div class="caption">Я, конечно, баба "Шо надо", правда, "Шо не надо" - тоже я.</div>
+      </div>
+      <div class="slide" id="slide-2">
+        <img src="2.jpg" alt="Image 2">
+        <div class="caption">Мои успехи в спорте: в день я наглаживаю 10-15км кота.</div>
+      </div>
+      <div class="slide" id="slide-3">
+        <img src="3.jpg" alt="Image 3">
+        <div class="caption">Не позволяй никому испортить твой день. Это ТВОЙ день, испорти его сам!</div>
+      </div>
+      <div class="slide" id="slide-4">
+        <img src="4.jpg" alt="Image 4">
+        <div class="caption">Познать себя? Нет, спасибо, я не хочу знакомиться с этим полудурком.</div>
+      </div>
+        </div>
+    <div class="unter">
+      <!-- captions -->
+      <div class="captions">
+        <div class="caption" id="caption-1">Я, конечно, баба "Шо надо", правда, "Шо не надо" - тоже я.</div>
+        <div class="caption" id="caption-2">Мои успехи в спорте: в день я наглаживаю 10-15км кота.</div>
+        <div class="caption" id="caption-3">Не позволяй никому испортить твой день. Это ТВОЙ день, испорти его сам!</div>
+        <div class="caption" id="caption-4">Познать себя? Нет, спасибо, я не хочу знакомиться с этим полудурком.</div>
+      </div>
+      <!-- Controls -->
+      <div class="controls">
+        <label for="slide1" class="control"></label>
+        <label for="slide2" class="control"></label>
+        <label for="slide3" class="control"></label>
+        <label for="slide4" class="control"></label>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>
