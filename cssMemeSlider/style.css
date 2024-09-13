@@ -81,12 +81,15 @@ img {
 
 .control {
   width: 1.2rem;     /* Видимый размер круга */
-  height: 1.2rem;    /* Видимый размер круга */
+  height:1.2rem;    /* Видимый размер круга */
   border-radius: 50%;
   background-color:#a18484;
    /* #ccc; */
   margin: 0 10px;
   cursor: pointer;
+  display: flex;      /* Flex для центрирования span */
+  justify-content: center;
+  align-items: center;
   transition: background-color 0.3s ease;
   /* Увеличиваем кликабельную область */
   padding: 15px;
@@ -98,11 +101,10 @@ img {
 }
 
 .cc{
-  width: 15px;     /* Видимый размер круга */
-  height: 15px;    /* Видимый размер круга */
+  width: 0.97rem;     /* Видимый размер круга */
+  height: 0.97rem;
   border-radius: 50%;
-  margin: 0 10px;
-  background-color: #7c1f1f; 
+  background-color: #ad9b9b;
   transition: background-color 0.3s ease;
 }
 
@@ -110,8 +112,7 @@ img {
   background-color: #999;
   transform: scale(1.2);
 }
-
-.control:active {
+.control:active  {
   background-color: #584040; /* Меняет цвет при нажатии */
   transform: scale(0.7); /* Легкое уменьшение размера при нажатии */
   }
@@ -150,10 +151,10 @@ input[type="radio"]:checked + .slides ,caption{
 }
 
 
-#slide1:checked ~ .unter .controls label[for="slide1"],
-#slide2:checked ~ .unter .controls label[for="slide2"],
-#slide3:checked ~ .unter .controls label[for="slide3"],
-#slide4:checked ~ .unter .controls label[for="slide4"] {
+#slide1:checked ~ .unter .controls   label[for="slide1"],
+#slide2:checked ~ .unter .controls  label[for="slide2"],
+#slide3:checked ~ .unter .controls  label[for="slide3"],
+#slide4:checked ~ .unter .controls  label[for="slide4"] {
   /* background-color: #383232; */
   background-color: #423053;
   /* transform: scale(1.1); */
