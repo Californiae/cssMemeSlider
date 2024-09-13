@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +22,7 @@ body {
   overflow: hidden;
 }
 
-.slides , unter{
+.slides , caption{
   display: flex;
   transition: transform 0.5s ease;
   /* width: 300%; 3 slides */
@@ -34,7 +35,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border:2px solid #a18484;
+  /* border:2px solid #a18484; */
+  /* border-radius: 20px; */
 }
 
 img {
@@ -42,14 +44,17 @@ img {
   height: auto;   /* Сохраняем естественные пропорции */
   /* object-fit: contain; Чтобы картинка не обрезалась и оставалась в своих пропорциях */
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .caption {
   margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #333;
+  font-size: 1.1rem;
+  color: #423053;
 
   /* flex-grow: 1; */
+  /* justify-content: center; */
+  /* align-items: center; */
   text-align: left;
   display: none;
 }
@@ -58,12 +63,13 @@ img {
 .controls {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  /* align-items:flex-start; */
+  margin-top: 0.5rem;
 
   /* flex-grow: 1; */
 }
 
-.control {
+/* .control {
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -71,7 +77,51 @@ img {
   margin: 0 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+} */
+
+.control {
+  width: 1.2rem;     /* Видимый размер круга */
+  height: 1.2rem;    /* Видимый размер круга */
+  border-radius: 50%;
+  background-color:#a18484;
+   /* #ccc; */
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Увеличиваем кликабельную область */
+  padding: 15px;
+  /* background: linear-gradient(#a18484, #a18484) padding-box; */
+  /* linear-gradient(to bottom, transparent, transparent) border-box; */
+  /* border: 10px solid #a18484; */ 
+  /* border: 5px solid transparent;  */
+  box-sizing: content-box; 
 }
+
+.cc{
+  width: 15px;     /* Видимый размер круга */
+  height: 15px;    /* Видимый размер круга */
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #7c1f1f; 
+  transition: background-color 0.3s ease;
+}
+
+.control:hover {
+  background-color: #999;
+  transform: scale(1.2);
+}
+
+.control:active {
+  background-color: #584040; /* Меняет цвет при нажатии */
+  transform: scale(0.7); /* Легкое уменьшение размера при нажатии */
+  }
+
+
+/* Стиль для активного контрола */
+input[type="radio"]:checked + .slides {
+  background-color: #555;
+}
+
 
 .unter{
 display: flex;
@@ -83,28 +133,30 @@ input[type="radio"] {
   display: none;
 }
 
-input[type="radio"]:checked + .slides {
+input[type="radio"]:checked + .slides ,caption{
   transform: translateX(0);
 }
 
-#slide2:checked ~ .slides {
+#slide2:checked ~ .slides ,caption{
   transform: translateX(-100%);
 }
 
-#slide3:checked ~ .slides {
+#slide3:checked ~ .slides ,caption{
   transform: translateX(-200%);
 }
 
-#slide4:checked ~ .slides {
+#slide4:checked ~ .slides ,caption{
   transform: translateX(-300%);
 }
 
 
-#slide1:checked ~ .unter .captions label[for="slide1"],
-#slide2:checked ~ .unter .captions label[for="slide2"],
-#slide3:checked ~ .unter .captions label[for="slide3"],
-#slide4:checked ~ .unter .captions label[for="slide4"] {
-  background-color: #555;
+#slide1:checked ~ .unter .controls label[for="slide1"],
+#slide2:checked ~ .unter .controls label[for="slide2"],
+#slide3:checked ~ .unter .controls label[for="slide3"],
+#slide4:checked ~ .unter .controls label[for="slide4"] {
+  /* background-color: #383232; */
+  background-color: #423053;
+  /* transform: scale(1.1); */
 }
 
 
