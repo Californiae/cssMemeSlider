@@ -71,15 +71,6 @@ img {
   /* flex-grow: 1; */
 }
 
-/* .control {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ccc;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-} */
 
 .control {
   width: 1.2rem;     /* Видимый размер круга */
@@ -191,13 +182,12 @@ input[type="radio"]:checked + .slides ,caption{
 }
 
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
