@@ -44,10 +44,12 @@ img {
   height: auto;   /* Сохраняем естественные пропорции */
   /* object-fit: contain; Чтобы картинка не обрезалась и оставалась в своих пропорциях */
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
 
 .caption {
+  animation-duration: 0.7s;
+  animation-name: slidein;
   margin-top: 1rem;
   font-size: 1.1rem;
   color: #423053;
@@ -85,7 +87,7 @@ img {
   border-radius: 50%;
   background-color:#a18484;
    /* #ccc; */
-  margin: 0 10px;
+  margin: 0 0.625rem;
   cursor: pointer;
   display: flex;      /* Flex для центрирования span */
   justify-content: center;
@@ -108,11 +110,11 @@ img {
   transition: background-color 0.3s ease;
 }
 
-.control:hover {
-  background-color: #999;
+.control:hover .cc {
+  background-color: #c5c2c2;
   transform: scale(1.2);
 }
-.control:active  {
+.control:active .cc {
   background-color: #584040; /* Меняет цвет при нажатии */
   transform: scale(0.7); /* Легкое уменьшение размера при нажатии */
   }
@@ -138,23 +140,27 @@ input[type="radio"]:checked + .slides ,caption{
   transform: translateX(0);
 }
 
+/* input[type="radio"]:checked ~ .slides + .unter .captions .caption {
+  opacity: 0;
+} */
+
 #slide2:checked ~ .slides ,caption{
   transform: translateX(-100%);
 }
 
-#slide3:checked ~ .slides ,caption{
+#slide3:checked ~ .slides , caption{
   transform: translateX(-200%);
 }
 
-#slide4:checked ~ .slides ,caption{
+#slide4:checked ~ .slides , caption{
   transform: translateX(-300%);
 }
 
 
-#slide1:checked ~ .unter .controls   label[for="slide1"],
-#slide2:checked ~ .unter .controls  label[for="slide2"],
-#slide3:checked ~ .unter .controls  label[for="slide3"],
-#slide4:checked ~ .unter .controls  label[for="slide4"] {
+#slide1:checked ~ .unter .controls   label[for="slide1"] .cc,
+#slide2:checked ~ .unter .controls  label[for="slide2"] .cc,
+#slide3:checked ~ .unter .controls  label[for="slide3"] .cc,
+#slide4:checked ~ .unter .controls  label[for="slide4"] .cc {
   /* background-color: #383232; */
   background-color: #423053;
   /* transform: scale(1.1); */
@@ -166,6 +172,7 @@ input[type="radio"]:checked + .slides ,caption{
 #slide3:checked ~ .unter .captions #caption-3,
 #slide4:checked ~ .unter .captions #caption-4 {
   display: block;
+  /* opacity: 1;  */
 }
 
 
@@ -181,4 +188,16 @@ input[type="radio"]:checked + .slides ,caption{
     flex-direction: column;
   }
 
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
